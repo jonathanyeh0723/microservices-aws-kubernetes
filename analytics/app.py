@@ -8,6 +8,8 @@ from sqlalchemy import and_, text
 from random import randint
 
 from config import app, db
+from dotenv import load_dotenv
+load_dotenv()
 
 
 port_number = int(os.environ.get("APP_PORT", 5153))
