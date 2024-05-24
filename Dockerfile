@@ -14,7 +14,7 @@ COPY ./analytics/ /app
 # Dependencies are installed during build time in the container itself so we don't have OS mismatch
 RUN pip install -r requirements.txt
 
-EXPOSE 5153
+#EXPOSE 5153
 
 # Start the database and Flask application
 CMD ["python3", "/app/app.py"]
