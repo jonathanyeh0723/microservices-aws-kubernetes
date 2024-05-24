@@ -5,7 +5,7 @@ ENV DB_PASSWORD=$DB_PASSWORD
 
 USER root
 
-RUN apt update -y && apt install postgresql postgresql-contrib -y
+#RUN apt update -y && apt install postgresql postgresql-contrib -y
 
 WORKDIR /app
 
