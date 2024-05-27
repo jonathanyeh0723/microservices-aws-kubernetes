@@ -109,16 +109,85 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 
 ### Deliverables
 1. `Dockerfile`
+
+![a-1](screenshots/d_1.png) 
+
 2. Screenshot of AWS CodeBuild pipeline
+
+![a-2](screenshots/d_2.png)
+
 3. Screenshot of AWS ECR repository for the application's repository
+
+![a-3](screenshots/d_3.png)
+
 4. Screenshot of `kubectl get svc`
+
+![a-4](screenshots/d_4.png)
+
 5. Screenshot of `kubectl get pods`
+
+![a-5](screenshots/d_5.png)
+
 6. Screenshot of `kubectl describe svc <DATABASE_SERVICE_NAME>`
+
+![a-6](screenshots/d_6.png)
+
 7. Screenshot of `kubectl describe deployment <SERVICE_NAME>`
+
+![a-7](screenshots/d_7.png)
+
 8. All Kubernetes config files used for deployment (ie YAML files)
+
+Refer to the foler `deployment`.
+```
+deployment
+├── configmap.yaml
+├── coworking.yaml
+└── secret.yaml
+
+0 directories, 3 files
+```
+
 9. Screenshot of AWS CloudWatch logs for the application
+
+![a-9](screenshots/d_9.png)
+
 10. `README.md` file in your solution that serves as documentation for your user to detail how your deployment process works and how the user can deploy changes. The details should not simply rehash what you have done on a step by step basis. Instead, it should help an experienced software developer understand the technologies and tools in the build and deploy process as well as provide them insight into how they would release new builds.
 
+Basically, follow the below instructions for setup:
+
+ - Create AWS EKS
+
+ - Install AWS CLI
+
+ - Install `kubectl`
+
+ - Using AWS CLI to create an EKS Cluster
+
+ - Utilizing HELM to create PostgreSQL database
+
+ - Deploy the service by
+```
+kubectl apply -f deployment/
+```
+
+The `deployment` includes 3 files:
+```
+deployment
+├── configmap.yaml
+├── coworking.yaml
+└── secret.yaml
+
+0 directories, 3 files
+```
+
+ - Check
+```
+kubectl get svc
+kubectl get pods
+kubectl describe svc <DATABASE_SERVICE_NAME>
+kubectl describe deployment <SERVICE_NAME>
+```
 
 ### Stand Out Suggestions
 Please provide up to 3 sentences for each suggestion. Additional content in your submission from the standout suggestions do _not_ impact the length of your total submission.

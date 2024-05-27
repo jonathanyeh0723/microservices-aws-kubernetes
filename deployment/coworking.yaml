@@ -16,18 +16,18 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 086483470533.dkr.ecr.us-east-2.amazonaws.com/coworking:17
+        image: 086483470533.dkr.ecr.us-east-2.amazonaws.com/coworking:18
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
-            path: /health_check
-            port: 5153
+          path: /health_check
+          port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 2
         readinessProbe:
           httpGet:
-            path: "/readiness_check"
-            port: 5153
+          path: "/readiness_check"
+          port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
         env:
@@ -56,5 +56,4 @@ spec:
               secretKeyRef:
                 name: mysecret
                 key: DB_PASSWORD
-        command: ["sh", "-c", "alembic upgrade head && python3 app.py"]
       restartPolicy: Always
