@@ -152,6 +152,8 @@ deployment
 
 ![a-9](screenshots/d_9.png)
 
+![a-10](screenshots/d_10.png)
+
 10. `README.md` file in your solution that serves as documentation for your user to detail how your deployment process works and how the user can deploy changes. The details should not simply rehash what you have done on a step by step basis. Instead, it should help an experienced software developer understand the technologies and tools in the build and deploy process as well as provide them insight into how they would release new builds.
 
 Basically, follow the below instructions for setup:
