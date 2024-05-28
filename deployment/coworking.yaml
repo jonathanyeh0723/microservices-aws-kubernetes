@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: coworking
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     service: coworking
   ports:
@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 086483470533.dkr.ecr.us-east-2.amazonaws.com/coworking:18
+        image: 086483470533.dkr.ecr.us-east-2.amazonaws.com/coworking:21
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -44,28 +44,33 @@ spec:
             port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
-        envFrom:
-        - configMapRef:
-            name: postgresql-service-config
+        #envFrom:
+        #- configMapRef:
+        #    name: postgresql-service-config
         env:
-        - name: DB_PASSWORD
+        - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysecret 
-              key: DB_PASSWORD
-                #- name: DB_USERNAME
-                #valueFrom:
-                #configMapKeyRef:
-                #name: postgresql-service-config
-                #key: DB_USERNAME
-                #- name: DB_HOST
-                #valueFrom:
-                #configMapKeyRef:
-                #name: postgresql-service-config
-                #key: DB_HOST
-                #- name: DB_PORT
-                #valueFrom:
-                #configMapKeyRef:
-                #name: postgresql-service-config
-                #key: DB_PORT
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: postgresql-service-config
+              key: POSTGRES_USER
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: postgresql-service-config
+              key: POSTGRES_DB
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgresql-service-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: postgresql-service-config
+              key: DB_PORT
       restartPolicy: Always
