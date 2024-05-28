@@ -134,10 +134,10 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 
 7. Screenshot of `kubectl describe deployment <SERVICE_NAME>`
 
-![a-70](screenshots/d_7-1.png)
-![a-71](screenshots/d_7-2.png)
-![a-72](screenshots/d_7-3.png)
-![a-74](screenshots/d_7-4.png)
+![a-7](screenshots/d_7-1.png)
+![b-7](screenshots/d_7-2.png)
+![c-7](screenshots/d_7-3.png)
+![d-7](screenshots/d_7-4.png)
 
 8. All Kubernetes config files used for deployment (ie YAML files)
 
