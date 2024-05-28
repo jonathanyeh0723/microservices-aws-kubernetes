@@ -134,11 +134,14 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 
 7. Screenshot of `kubectl describe deployment <SERVICE_NAME>`
 
-![a-7](screenshots/d_7.png)
+![a-70](screenshots/d_7-1.png)
+![a-71](screenshots/d_7-2.png)
+![a-72](screenshots/d_7-3.png)
+![a-74](screenshots/d_7-4.png)
 
 8. All Kubernetes config files used for deployment (ie YAML files)
 
-Refer to the foler `deployment`.
+Refer to the foler `deployment` and `DB-YAML`.
 ```
 deployment
 ├── configmap.yaml
@@ -146,6 +149,15 @@ deployment
 └── secret.yaml
 
 0 directories, 3 files
+```
+
+```
+├── postgresql-deployment.yaml
+├── postgresql-service.yaml
+├── pvc.yaml
+└── pv.yaml
+
+0 directories, 4 files
 ```
 
 9. Screenshot of AWS CloudWatch logs for the application
