@@ -121,6 +121,8 @@ deployment
 
 ![a-9](screenshots/d_9.png)
 
+![a-20](screenshots/d_o.png)
+
 ![a-10](screenshots/d_in.png)
 
 Basically, follow the below instructions for setup:
