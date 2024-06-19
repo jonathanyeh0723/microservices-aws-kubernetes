@@ -7,6 +7,6 @@ data:
   #DB_USERNAME: "myuser"
   POSTGRES_USER: myuser
   POSTGRES_DB: mydatabase
-  DB_HOST: "10.100.43.98"
+  DB_HOST: "10.100.220.184"
   DB_PORT: "5432"
 
